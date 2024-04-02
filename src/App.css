@@ -289,7 +289,7 @@ h1 a {
     margin: auto;
     display: flex;
     gap: 2rem;
-    margin-top: 10rem;
+    margin: 10rem auto;
     padding: 1rem;
     background-color: white;
     border-radius: 1rem;
@@ -310,16 +310,16 @@ h1 a {
     background-repeat: no-repeat; /* No repetir la imagen de fondo del botón */
   }
 
-.foto:hover{
-  background-color: var(--color-primario);
-  color: aliceblue;
-}
+  .foto:hover {
+    background-color: var(--color-primario);
+    color: aliceblue;
+  }
 
-.foto label{
-  cursor: pointer;
-}
+  .foto label {
+    cursor: pointer;
+  }
 
-  .foto input{
+  .foto input {
     appearance: none;
     display: none;
     visibility: hidden;
@@ -357,12 +357,59 @@ h1 a {
     margin: auto;
     padding: 0.5rem;
     transition: 0.2s;
+    font-weight: 900;
   }
 
   .inputs button:active {
     color: white;
     background-color: var(--color-primario);
   }
+
+  select{
+    margin: 1rem 0;
+    padding: 0.5rem 0.2rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: var(--color-primario) 0.1rem solid;
+  }
+
+  select:focus{
+    border-radius: 1rem 1rem 0 0;
+    outline: none;
+  }
+
+  .contenedor-agregar-h3{
+    color: var(--color-primario);
+    font-size: 2rem;
+  }
+
+  .contenedor-agregar-talles{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .contenedor-agregar-talles label{
+    font-size: 1.5rem;
+  }
+
+  .contenedor-agregar-talles input{
+    width: 1.5rem;
+  }
+  
+  textarea{
+    border-radius: 1rem;
+    border: var(--color-primario) 0.1rem solid;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  /* -------------------------------------------------- */
+  /* -------------------------Eliminar------------------------- */
+  /* -------------------------------------------------- */
 
   .productos-filas {
     width: 80%;
@@ -376,12 +423,12 @@ h1 a {
     border-radius: 1rem;
   }
 
-.productos-filas img{
-  height: 90%;
-  width: 100px;
-  object-fit: cover;
-  border-radius: 1rem;
-}
+  .productos-filas img {
+    height: 90%;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
 
   .productos-filas button {
     background-color: transparent;
@@ -391,8 +438,29 @@ h1 a {
     cursor: pointer;
     transition: 0.2s;
   }
-  
-  .productos-filas button:hover{
+
+  .productos-filas button:hover {
     font-size: 2.1rem;
+  }
+
+  /* -------------------------------------------------- */
+  /* -------------------------Consultas------------------------- */
+  /* -------------------------------------------------- */
+
+  
+  .consultas-filas {
+    width: 80%;
+    height: 8rem;
+    margin: 2rem auto auto auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 1rem;
+  }
+
+  .consultas-filas h2{
+    color: var(--color-primario);
   }
 }

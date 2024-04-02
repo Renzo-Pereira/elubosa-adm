@@ -7,6 +7,7 @@ const Agregar = () => {
   const productosRef = collection(db, "productos");
   const [titulo, setTitulo] = useState("");
   const [precio, setPrecio] = useState("");
+  const [categoria, setCategoria] = useState("");
   const [imagen, setImagen] = useState(null);
   const [imagenUrl, setImagenUrl] = useState(null); // Agregar estado para la URL de la imagen
   const inputRef = useRef(null); // Referencia al input de tipo file
@@ -17,6 +18,10 @@ const Agregar = () => {
 
   const handlePrecioChange = (event) => {
     setPrecio(event.target.value);
+  };
+
+  const handleCategoriaChange = (event) => {
+    setCategoria(event.target.value);
   };
 
   const handleImagenChange = (event) => {
@@ -35,6 +40,11 @@ const Agregar = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!imagen) {
+      alert("Debes seleccionar una imagen");
+      return;
+    }
+
     // Subir imagen a Firebase Storage
     const storageRef = ref(storage, `imagenes/${imagen.name}`);
     await uploadBytes(storageRef, imagen);
@@ -45,6 +55,7 @@ const Agregar = () => {
     await addDoc(productosRef, {
       titulo: titulo,
       precio: precio,
+      categoria: categoria,
       imagenUrl: imageUrl,
     });
     // Limpiar los campos después de agregar el producto
@@ -56,7 +67,11 @@ const Agregar = () => {
 
   return (
     <div className="contenedor-agregar">
-      <button className="foto" style={{ backgroundImage: `url(${imagenUrl})` }} onClick={handleFotoClick}>
+      <button
+        className="foto"
+        style={{ backgroundImage: `url(${imagenUrl})` }}
+        onClick={handleFotoClick}
+      >
         {imagenUrl ? null : <i className="bi bi-folder-plus"></i>}
         <input
           ref={inputRef}
@@ -64,7 +79,7 @@ const Agregar = () => {
           id="imagen"
           accept="image/*"
           onChange={handleImagenChange}
-          style={{ display: 'none' }} // Ocultar el input file
+          style={{ display: "none" }} // Ocultar el input file
         />
       </button>
       <div className="inputs">
@@ -82,6 +97,48 @@ const Agregar = () => {
           value={precio}
           onChange={handlePrecioChange}
         />
+        <label htmlFor="categoria">Categoria</label>
+        <select
+          name="categoria"
+          value={categoria}
+          onChange={handleCategoriaChange}
+        >
+          <option value="vestido">Vestido</option>
+          <option value="short">Short</option>
+          <option value="remera">Remera</option>
+          <option value="musculosa">Musculosa</option>
+        </select>
+        <h3 className="contenedor-agregar-h3">Talles</h3>
+        <div className="contenedor-agregar-talles">
+          <label htmlFor="XXXS">XXXS</label>
+          <input name="talleXXXS" type="checkbox" />
+          <label htmlFor="XXS">XXS</label>
+          <input name="talleXXS" type="checkbox" />
+          <label htmlFor="XS">XS</label>
+          <input name="talleXS" type="checkbox" />
+          <label htmlFor="S">S</label>
+          <input name="talleS" type="checkbox" />
+          <label htmlFor="M">M</label>
+          <input name="talleM" type="checkbox" />
+          <label htmlFor="L">L</label>
+          <input name="talleL" type="checkbox" />
+          <label htmlFor="XL">XL</label>
+          <input name="talleXL" type="checkbox" />
+          <label htmlFor="XXL">XXL</label>
+          <input name="talleXXL" type="checkbox" />
+          <label htmlFor="XXXL">XXXL</label>
+          <input name="talleXXXL" type="checkbox" />
+          <label htmlFor="XXXXL">XXXXL</label>
+          <input name="talleXXXXL" type="checkbox" />
+          <label htmlFor="XXXXXL">XXXXXL</label>
+          <input name="talleXXXXXL" type="checkbox" />
+          <label htmlFor="XXXXXXL">XXXXXXL</label>
+          <input name="talleXXXXXXL" type="checkbox" />
+          <label htmlFor="XXXXXXXL">XXXXXXXL</label>
+          <input name="talleXXXXXXXL" type="checkbox" />
+        </div>
+        <label htmlFor="colores">Colores</label>
+        <textarea />
         <button onClick={handleSubmit}>Agregar</button>
       </div>
     </div>
