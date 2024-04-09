@@ -90,8 +90,14 @@ const Agregar = () => {
     setPrecio("");
     setImagen(null);
     setImagenUrl(null); // Limpiar la URL de la imagen
-    setDescripcion("");
     setTallesSeleccionados([]);
+    setColores("");
+    setDescripcion("");
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
   };
 
   return (
@@ -140,31 +146,31 @@ const Agregar = () => {
         <h3 className="contenedor-agregar-h3">Talles</h3>
         <div className="contenedor-agregar-talles">
           <label htmlFor="XXXS">XXXS</label>
-          <input onChange={handleChangeTalle} name="talleXXXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXS" type="checkbox" />
           <label htmlFor="XXS">XXS</label>
-          <input onChange={handleChangeTalle} name="talleXXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXS" type="checkbox" />
           <label htmlFor="XS">XS</label>
-          <input onChange={handleChangeTalle} name="talleXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XS" type="checkbox" />
           <label htmlFor="S">S</label>
-          <input onChange={handleChangeTalle} name="talleS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="S" type="checkbox" />
           <label htmlFor="M">M</label>
-          <input onChange={handleChangeTalle} name="talleM" type="checkbox" />
+          <input onChange={handleChangeTalle} name="M" type="checkbox" />
           <label htmlFor="L">L</label>
-          <input onChange={handleChangeTalle} name="talleL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="L" type="checkbox" />
           <label htmlFor="XL">XL</label>
-          <input onChange={handleChangeTalle} name="talleXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XL" type="checkbox" />
           <label htmlFor="XXL">XXL</label>
-          <input onChange={handleChangeTalle} name="talleXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXL" type="checkbox" />
           <label htmlFor="XXXL">XXXL</label>
-          <input onChange={handleChangeTalle} name="talleXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXL" type="checkbox" />
           <label htmlFor="XXXXL">XXXXL</label>
-          <input onChange={handleChangeTalle} name="talleXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXXL" type="checkbox" />
           <label htmlFor="XXXXXL">XXXXXL</label>
-          <input onChange={handleChangeTalle} name="talleXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXXXL" type="checkbox" />
           <label htmlFor="XXXXXXL">XXXXXXL</label>
-          <input onChange={handleChangeTalle} name="talleXXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXXXXL" type="checkbox" />
           <label htmlFor="XXXXXXXL">XXXXXXXL</label>
-          <input onChange={handleChangeTalle} name="talleXXXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="XXXXXXXL" type="checkbox" />
         </div>
         <label>Colores</label>
         <textarea value={colores} onChange={handleChangeColores}/>
