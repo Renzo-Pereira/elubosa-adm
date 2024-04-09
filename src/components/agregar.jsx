@@ -11,6 +11,9 @@ const Agregar = () => {
   const [imagen, setImagen] = useState(null);
   const [imagenUrl, setImagenUrl] = useState(null); // Agregar estado para la URL de la imagen
   const inputRef = useRef(null); // Referencia al input de tipo file
+  const [descripcion, setDescripcion] = useState('');
+  const [colores, setColores] = useState('');
+  const [tallesSeleccionados, setTallesSeleccionados] = useState([]);
 
   const handleTituloChange = (event) => {
     setTitulo(event.target.value);
@@ -37,6 +40,28 @@ const Agregar = () => {
     inputRef.current.click();
   };
 
+  const handleChangeTalle = (event) => {
+    const talle = event.target.name;
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      // Agrega el talle seleccionado
+      setTallesSeleccionados([...tallesSeleccionados, talle]);
+    } else {
+      // Elimina el talle no seleccionado
+      const updatedTalles = tallesSeleccionados.filter(item => item !== talle);
+      setTallesSeleccionados(updatedTalles);
+    }
+  };
+
+  const handleChangeColores = (event) => {
+    setColores(event.target.value);
+  };
+
+  const handleChangeDescripcion = (event) => {
+    setDescripcion(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -57,12 +82,16 @@ const Agregar = () => {
       precio: precio,
       categoria: categoria,
       imagenUrl: imageUrl,
+      descripcion: descripcion,
+      talles: tallesSeleccionados,
     });
     // Limpiar los campos después de agregar el producto
     setTitulo("");
     setPrecio("");
     setImagen(null);
     setImagenUrl(null); // Limpiar la URL de la imagen
+    setDescripcion("");
+    setTallesSeleccionados([]);
   };
 
   return (
@@ -111,34 +140,36 @@ const Agregar = () => {
         <h3 className="contenedor-agregar-h3">Talles</h3>
         <div className="contenedor-agregar-talles">
           <label htmlFor="XXXS">XXXS</label>
-          <input name="talleXXXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXS" type="checkbox" />
           <label htmlFor="XXS">XXS</label>
-          <input name="talleXXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXS" type="checkbox" />
           <label htmlFor="XS">XS</label>
-          <input name="talleXS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXS" type="checkbox" />
           <label htmlFor="S">S</label>
-          <input name="talleS" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleS" type="checkbox" />
           <label htmlFor="M">M</label>
-          <input name="talleM" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleM" type="checkbox" />
           <label htmlFor="L">L</label>
-          <input name="talleL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleL" type="checkbox" />
           <label htmlFor="XL">XL</label>
-          <input name="talleXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXL" type="checkbox" />
           <label htmlFor="XXL">XXL</label>
-          <input name="talleXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXL" type="checkbox" />
           <label htmlFor="XXXL">XXXL</label>
-          <input name="talleXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXL" type="checkbox" />
           <label htmlFor="XXXXL">XXXXL</label>
-          <input name="talleXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXXL" type="checkbox" />
           <label htmlFor="XXXXXL">XXXXXL</label>
-          <input name="talleXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXXXL" type="checkbox" />
           <label htmlFor="XXXXXXL">XXXXXXL</label>
-          <input name="talleXXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXXXXL" type="checkbox" />
           <label htmlFor="XXXXXXXL">XXXXXXXL</label>
-          <input name="talleXXXXXXXL" type="checkbox" />
+          <input onChange={handleChangeTalle} name="talleXXXXXXXL" type="checkbox" />
         </div>
-        <label htmlFor="colores">Colores</label>
-        <textarea />
+        <label>Colores</label>
+        <textarea value={colores} onChange={handleChangeColores}/>
+        <label>Descripción</label>
+        <textarea value={descripcion} onChange={handleChangeDescripcion}/>
         <button onClick={handleSubmit}>Agregar</button>
       </div>
     </div>
