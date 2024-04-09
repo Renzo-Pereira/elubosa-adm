@@ -82,8 +82,9 @@ const Agregar = () => {
       precio: precio,
       categoria: categoria,
       imagenUrl: imageUrl,
-      descripcion: descripcion,
       talles: tallesSeleccionados,
+      colores: colores,
+      descripcion: descripcion,
     });
     // Limpiar los campos después de agregar el producto
     setTitulo("");
