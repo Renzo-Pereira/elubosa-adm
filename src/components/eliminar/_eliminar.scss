@@ -1,0 +1,43 @@
+  .productos-filas {
+    width: 80%;
+    height: 8rem;
+    margin: 2rem auto auto auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 1rem;
+  }
+
+  .productos-filas img {
+    height: 90%;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .productos-filas button {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .productos-filas button:hover {
+    font-size: 2.1rem;
+  }
+
+  @media (max-width: 767px) {
+
+  }
+  
+  @media (min-width: 767px) and (max-width: 1024px) {
+  
+  }
+  
+  @media (min-width: 1025px) {
+  
+  }

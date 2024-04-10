@@ -1,0 +1,134 @@
+  .contenedor-agregar {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    margin: 10rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+  }
+
+  .foto {
+    width: 300px;
+    height: 400px;
+    background-color: transparent;
+    border: var(--color-primario) 0.2rem solid;
+    border-radius: 1rem;
+    color: var(--color-primario);
+    font-size: 8rem;
+    cursor: pointer;
+    transition: 0.4s;
+    background-size: cover; /* Cubrir todo el fondo del botón */
+    background-position: center; /* Centrar la imagen de fondo del botón */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo del botón */
+  }
+
+  .foto:hover {
+    background-color: var(--color-primario);
+    color: aliceblue;
+  }
+
+  .foto label {
+    cursor: pointer;
+  }
+
+  .foto input {
+    appearance: none;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .inputs {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputs label {
+    color: var(--color-primario);
+    font-size: 2rem;
+  }
+
+  .inputs input {
+    border: var(--color-primario) 0.1rem solid;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    height: 2rem;
+    outline: none;
+  }
+
+  .inputs button {
+    color: var(--color-primario);
+    background-color: transparent;
+    border: var(--color-primario) 0.1rem solid;
+    border-radius: 1rem;
+    width: 30%;
+    margin: auto;
+    padding: 0.5rem;
+    transition: 0.2s;
+    font-weight: 900;
+  }
+
+  .inputs button:active {
+    color: white;
+    background-color: var(--color-primario);
+  }
+
+  select{
+    margin: 1rem 0;
+    padding: 0.5rem 0.2rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: var(--color-primario) 0.1rem solid;
+  }
+
+  select:focus{
+    border-radius: 1rem 1rem 0 0;
+    outline: none;
+  }
+
+  .contenedor-agregar-h3{
+    color: var(--color-primario);
+    font-size: 2rem;
+  }
+
+  .contenedor-agregar-talles{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .contenedor-agregar-talles label{
+    font-size: 1.5rem;
+  }
+
+  .contenedor-agregar-talles input{
+    width: 1.5rem;
+  }
+  
+  textarea{
+    border-radius: 1rem;
+    border: var(--color-primario) 0.1rem solid;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 767px) {
+
+  }
+  
+  @media (min-width: 767px) and (max-width: 1024px) {
+  
+  }
+  
+  @media (min-width: 1025px) {
+  
+  }

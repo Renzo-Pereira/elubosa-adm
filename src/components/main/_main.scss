@@ -1,0 +1,40 @@
+.main {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+  }
+
+  .main-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--color-primario) 0.2rem solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: white;
+    color: var(--color-primario);
+  }
+
+  .main-cards:hover {
+    animation: wobble;
+    animation-duration: 1.3s;
+  }
+
+  .main-cards i {
+    font-size: 10rem;
+    color: var(--color-primario);
+  }
+
+  @media (max-width: 767px) {
+
+  }
+  
+  @media (min-width: 767px) and (max-width: 1024px) {
+  
+  }
+  
+  @media (min-width: 1025px) {
+  
+  }
