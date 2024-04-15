@@ -31,7 +31,23 @@
   }
 
   @media (max-width: 767px) {
+    .productos-filas {
+      width: 80%;
+      height: 12rem;
+      margin: 2rem auto auto auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 1rem;
+    }
 
+    .productos-filas img {
+      height: 100%;
+    }
   }
   
   @media (min-width: 767px) and (max-width: 1024px) {

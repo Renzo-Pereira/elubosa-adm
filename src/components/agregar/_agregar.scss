@@ -1,9 +1,9 @@
   .contenedor-agregar {
-    width: 50%;
+    width: 90%;
     margin: auto;
     display: flex;
     gap: 2rem;
-    margin: 10rem auto;
+    margin: 4rem auto;
     padding: 1rem;
     background-color: white;
     border-radius: 1rem;
@@ -122,13 +122,15 @@
   }
 
   @media (max-width: 767px) {
-
-  }
-  
-  @media (min-width: 767px) and (max-width: 1024px) {
-  
+    .contenedor-agregar {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem auto;
+      padding: 0.5rem;
+    }
   }
   
   @media (min-width: 1025px) {
-  
   }

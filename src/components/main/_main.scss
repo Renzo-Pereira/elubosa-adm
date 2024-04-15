@@ -28,7 +28,22 @@
   }
 
   @media (max-width: 767px) {
-
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2rem auto;
+    }
+  
+    .main-cards {
+      display: flex;
+      align-items: center;
+      border: var(--color-primario) 0.2rem solid;
+      border-radius: 1rem;
+      padding: 1rem;
+      background-color: white;
+      color: var(--color-primario);
+    }
   }
   
   @media (min-width: 767px) and (max-width: 1024px) {
